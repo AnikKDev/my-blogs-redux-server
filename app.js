@@ -6,7 +6,11 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
+// all routes
+const blogsRoutes = require("./router/blogs.router");
 // ======routes will be here================
+app.use("/api/v1/blogs", blogsRoutes);
+
 app.get("/", (req, res, next) => {
   res.send("yayyy route is working");
 });
